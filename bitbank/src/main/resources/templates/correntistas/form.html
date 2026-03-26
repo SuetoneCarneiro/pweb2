@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Correntistas</title>
+</head>
+<body>
+    <h1>Cadastro de Correntista</h1>
+
+    <div th:text="${mensagem}" style="color: red;"></div>
+
+    <form th:action="@{/correntistas/save}" method="POST" th:object="${correntista}">
+        <label for="nome">Nome:</label>
+        <input type="text" th:field="*{nome}" required><br><br>
+
+        <label for="nome">Senha:</label>
+        <input type="password" th:field="*{senha}" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" th:field="*{email}" required><br><br>
+
+        <label for="admin">Admin?</label>
+        <input type="checkbox" th:field="*{admin}" /><br><br>
+
+        <button type="submit">Salvar</button>
+
+    </form>
+</body>
+</html>
